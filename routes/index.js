@@ -50,12 +50,12 @@ router.post('/saveUser', function(req, res, next) {
         console.log(data.toString())
          let details=convertToObject(data)
         addUser(data)
-        //  sendMails(details)
-
+          sendMails(details)
+          res.send({msg:`Details from ${req.file.originalname} was added successfully!!! `}) 
       })
       console.log("./"+req.file.destination+req.file.originalname)
     }
-res.send(req.file) 
+
 }); 
 });
 
